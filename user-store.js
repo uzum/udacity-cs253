@@ -1,5 +1,6 @@
 /*jslint node:true*/
 'use strict';
+
 var SECRET = "secret";
 
 var crypto = require('crypto');
@@ -38,7 +39,11 @@ module.exports = {
         return hashWithSalt(password, salt) === _user.password;
       }
       return false;
-    });
+    })[0] || null;
+  },
+
+  cookieValue: function(user){
+    return hash(String(user.id));
   },
   
   verifyCookie: function(cookie){
@@ -51,7 +56,6 @@ module.exports = {
     }
   },
 
-  
   availableUsername: function(username){
     return users.every(function(user){
       return user.username !== username;
