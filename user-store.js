@@ -1,7 +1,6 @@
 /*jslint node:true*/
 'use strict';
 var SECRET = "secret";
-var SALT = "salt";
 
 var crypto = require('crypto');
 
