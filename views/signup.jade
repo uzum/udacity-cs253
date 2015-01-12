@@ -1,0 +1,15 @@
+html
+  head
+    title Signup Page
+  body
+    form(method="POST")
+      div
+        input(name="username")
+      div
+        input(type="password", name="password")
+      div
+        input(type="password", name="verify")
+      div
+        input(name="email")
+      button(type="submit") Submit
+    div(style="color: red;")= error
