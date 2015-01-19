@@ -4,6 +4,11 @@
 var router = require('express').Router();
 var UserStore = require('./user-store');
 
+router.get('/', function(request, response){
+  response.write('Hello Udacity!');
+  response.end();
+});
+
 router.get('/signup', function(request, response){
   var user = UserStore.verifyCookie(request.cookies.user_id || null);
   if(!user){
